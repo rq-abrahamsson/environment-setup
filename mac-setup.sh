@@ -18,10 +18,9 @@
 #Change shell and you should log in and out after this...
 #chsh -s /usr/local/bin/zsh
 
-echo "    ZSH_THEME=pygmalion
-
-    plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
-" >> ~/.zshrc
+#echo "    ZSH_THEME=pygmalion
+#    plugins=(git colored-man colorize github jira vagrant virtualenv pip python brew osx zsh-syntax-highlighting)
+#" >> ~/.zshrc
 #    # Add env.sh
 #    source ~/Projects/config/env.sh" >> ~/.zshrc
 
@@ -35,4 +34,15 @@ echo "    ZSH_THEME=pygmalion
 #sudo rm -rf /usr/share/emacs
 
 #git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-#ln -s .spacemacs-template ~/.spacemacs
+### should remove
+#####ln -s .spacemacs-template ~/.spacemacs
+
+
+###################
+### setup Python
+###################
+
+brew install python
+pip install --upgrade setuptools
+pip install --upgrade pip
+pip install virtualenv
