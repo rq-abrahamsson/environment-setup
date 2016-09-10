@@ -16,26 +16,26 @@ values."
    dotspacemacs-configuration-layer-path '()
    ;; List of configuration layers to load. If it is the symbol `all' instead
    ;; of a list then all discovered layers will be installed.
-   dotspacemacs-configuration-layer
+   dotspacemacs-configuration-layers
    '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;;auto-completion
+     auto-completion
      ;;better-defaults
-    ;emacs-lisp
+     emacs-lisp
      git
-     ;;markdown
-     ;;react
-     ;;osx
+     markdown
+     react
+     osx
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;;spell-checking
-     ;;syntax-checking
+     spell-checking
+     syntax-checking
      version-control
      )
    ;; List of additional packages that will be installed without being
