@@ -6,6 +6,7 @@
 
 #brew install git
 #brew install hub
+#brew intsall aspell
 #brew cask install google-chrome
 
 ###################
