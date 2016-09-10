@@ -5,6 +5,7 @@
 #brew update
 
 #brew install git
+#brew install hub
 #brew cask install google-chrome
 
 ###################
@@ -23,6 +24,11 @@
 #" >> ~/.zshrc
 #    # Add env.sh
 #    source ~/Projects/config/env.sh" >> ~/.zshrc
+
+####################
+### setup hub
+####################
+#eval "$(hub alias -s)"
 
 ####################
 ### setup spacemacs
