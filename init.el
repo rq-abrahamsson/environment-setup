@@ -30,6 +30,7 @@ values."
      markdown
      react
      osx
+     python
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
