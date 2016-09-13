@@ -27,6 +27,7 @@ values."
      ;;better-defaults
      emacs-lisp
      git
+     html
      markdown
      react
      osx
