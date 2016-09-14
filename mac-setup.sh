@@ -56,3 +56,4 @@
 #Install iterm2 according to instructions on its homepage....
 #rm ~/Library/Caches/com.googlecode.iterm2.plist
 #cp com.googlecode.iterm12.plist ~/Library/Preferences/
+#defaults read com.googlecode.iterm2
