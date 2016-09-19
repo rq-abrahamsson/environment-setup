@@ -16,11 +16,12 @@
 #brew install zsh zsh-completions
 
 #curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 #Change shell and you should log in and out after this...
 #chsh -s /usr/local/bin/zsh
 
 #ln -s .zshrc ~
+
 
 ####################
 ### setup hub
@@ -54,6 +55,8 @@
 ### setup iTerm2
 ###################
 #Install iterm2 according to instructions on its homepage....
+#brew cask install iterm2
 #rm ~/Library/Caches/com.googlecode.iterm2.plist
 #cp com.googlecode.iterm12.plist ~/Library/Preferences/
 #defaults read com.googlecode.iterm2
+#brew cask install spectacle
