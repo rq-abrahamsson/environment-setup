@@ -32,11 +32,11 @@ values."
      react
      org
      osx
-     python
-     ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (python :variables
+             python-enable-yapf-format-on-save t)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      spell-checking
      syntax-checking
      version-control

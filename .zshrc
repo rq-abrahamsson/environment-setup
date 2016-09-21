@@ -92,3 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+
+# Set emacs keybindings for history substring not working
+#bindkey -M emacs '^P' history-substring-search-up
+#bindkey -M emacs '^N' history-substring-search-down
