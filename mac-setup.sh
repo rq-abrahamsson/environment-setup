@@ -8,6 +8,28 @@
 #brew install hub
 #brew intsall aspell
 #brew cask install google-chrome
+#brew cask install telegram
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# check for updates daily
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# sets clock to 24-hour mode
+defaults write NSGlobalDomain AppleICUForce24HourTime -bool true
+
+# disable warning when changing file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# disable .DS_Store on network drives
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+
+# show battery percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "NO"
+
+# set tap-to-click
+defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 
 ###################
 ### setup ZSH and oh-my-zsh
@@ -45,6 +67,9 @@
 ###################
 ### setup Python
 ###################
+
+# For switching python version use chpy
+#https://github.com/mahnve/chpy
 
 #brew install python
 #pip install --upgrade setuptools
