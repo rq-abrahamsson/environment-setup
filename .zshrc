@@ -96,3 +96,37 @@ source $ZSH/oh-my-zsh.sh
 # Set emacs keybindings for history substring not working
 #bindkey -M emacs '^P' history-substring-search-up
 #bindkey -M emacs '^N' history-substring-search-down
+
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+
+function check {
+    count=0
+
+    if [ "$2" = "" ]; then
+        echo "########################### Checkins ###########################"
+        for item in $(git log --pretty=%H --grep $1); do
+            git --no-pager show -s --pretty="%h %cn, %s - %ar" $item
+        done
+
+        echo ""
+        echo "########################### Files ###########################"
+        for item in $(git log --pretty=%h --grep $1); do
+            for file in $(git diff-tree --no-commit-id --name-only -r $item); do
+                count=$(($count + 1))
+                echo -e "$item $count\t$file"
+            done
+        done
+    else
+        ########################### Diff ###########################
+        for item in $(git log --pretty=%H --grep $1); do
+            for file in $(git diff-tree --no-commit-id --name-only -r $item); do
+                count=$(($count + 1))
+                if [ "$count" = "$2" ]; then
+                    git --no-pager show $item $file
+                fi
+            done
+        done
+    fi
+
+}
