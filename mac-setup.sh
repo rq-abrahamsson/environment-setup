@@ -85,3 +85,13 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 #cp com.googlecode.iterm12.plist ~/Library/Preferences/
 #defaults read com.googlecode.iterm2
 #brew cask install spectacle
+
+##################
+### setup Android
+##################
+
+brew install node
+brew install watchman
+npm install -g react-native-cli
+brew cask install java
+brew install android-sdk

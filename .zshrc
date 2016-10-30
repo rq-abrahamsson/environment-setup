@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 #bindkey -M emacs '^P' history-substring-search-up
 #bindkey -M emacs '^N' history-substring-search-down
 
-export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 
 function check {
