@@ -66,6 +66,7 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 
 # Aliases
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+alias roulette='if [[ $[ $RANDOM % 6 ] == 0 ]]; then echo "boom"; else echo "click"; fi'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -97,6 +98,11 @@ source $ZSH/oh-my-zsh.sh
 #bindkey -M emacs '^P' history-substring-search-up
 #bindkey -M emacs '^N' history-substring-search-down
 
+
+# Add latex to path
+export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin
+
+# Add android stuff to path
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 

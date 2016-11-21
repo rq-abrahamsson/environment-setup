@@ -25,9 +25,15 @@ values."
      ;; ----------------------------------------------------------------
      auto-completion
      ;;better-defaults
+     bibtex
+     elm
      emacs-lisp
      git
      html
+     (latex :variables
+            latex-build-command "LaTeX"
+            latex-enable-auto-fill t
+            latex-enable-folding t)
      markdown
      ;;php
      react
@@ -47,7 +53,10 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(evil-escape restclient)
+   dotspacemacs-additional-packages
+   '(
+     evil-escape
+     restclient)
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -273,8 +282,9 @@ you should place your code here."
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
-  )
 
+  )
+(setq-default TeX-master nil) ; Query for master file.
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
