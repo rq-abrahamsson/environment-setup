@@ -52,7 +52,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize virtualenv pip python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search)
+plugins=(git colored-man colorize virtualenv pip python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search jsontools)
 
 export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 export EDITOR='emacs'
@@ -106,6 +106,10 @@ export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin
 export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 
+# Rearrange so brew path is ok
+PATH=/usr/local/bin:$PATH
+
+#Script to check for git versions
 function check {
     count=0
 
@@ -136,3 +140,8 @@ function check {
     fi
 
 }
+
+export export PATH="$PATH:`/usr/local/bin/yarn`"
+
+export NVM_DIR="/Users/robin.abrahamsson/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

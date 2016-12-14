@@ -26,8 +26,12 @@ values."
      auto-completion
      ;;better-defaults
      bibtex
+     (clojure :variables
+              clojure-enable-fancify-symbols t)
+     csv
      elm
      emacs-lisp
+     ;;flow-type
      git
      html
      (latex :variables
@@ -130,6 +134,8 @@ values."
                                :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
+   dotspacemacs-emacs-command-key "SPC"
+   dotspacemacs-ex-command-key ":"
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
    dotspacemacs-emacs-leader-key "M-m"
@@ -151,7 +157,7 @@ values."
    ;; Emacs commands (M-x).
    ;; By default the command key is `:' so ex-commands are executed like in Vim
    ;; with `:' and Emacs commands are executed with `<leader> :'.
-   dotspacemacs-command-key ":"
+   ;; Old config: dotspacemacs-command-key ":"
    ;; If non nil `Y' is remapped to `y$'. (default t)
    dotspacemacs-remap-Y-to-y$ t
    ;; Name of the default layout (default "Default")
@@ -259,6 +265,21 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
   )
 
+(defun my-setup-indent (n)
+  ;; java/c/c++
+  (setq c-basic-offset n)
+  ;; web development
+  (setq coffee-tab-width n) ; coffeescript
+  (setq javascript-indent-level n) ; javascript-mode
+  (setq js-indent-level n) ; js-mode
+  (setq js2-basic-offset n) ; js2-mode, in latest js2-mode, it's alias of js-indent-level
+  (setq web-mode-markup-indent-offset n) ; web-mode, html tag in html file
+  (setq web-mode-css-indent-offset n) ; web-mode, css in html file
+  (setq web-mode-code-indent-offset n) ; web-mode, js code in html file
+  (setq web-mode-attr-indent-offset n)
+  (setq css-indent-offset n) ; css-mode
+  )
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -267,24 +288,17 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   (fset 'evil-visual-update-x-selection 'ignore)
+  (setq evil-move-beyond-eol t)
   (setq-default evil-escape-key-sequence "jk")
   (setq-default evil-escape-delay 0.2)
-  (setq-default
-   ;; js2-mode
-   js2-basic-offset 2
-   ;; web-mode
-   css-indent-offset 4
-   web-mode-markup-indent-offset 4
-   web-mode-css-indent-offset 4
-   web-mode-code-indent-offset 4
-   web-mode-attr-indent-offset 4)
+  (my-setup-indent 2)
   (with-eval-after-load 'web-mode
     (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
     (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 
+  (setq-default TeX-master nil) ; Query for master file.
   )
-(setq-default TeX-master nil) ; Query for master file.
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
@@ -295,7 +309,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-mode web-beautify tern tagedit smeargle slim-mode scss-mode sass-mode orgit mmm-mode markdown-toc markdown-mode magit-gitflow less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc jade-mode helm-gitignore request helm-css-scss haml-mode gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md evil-magit magit magit-popup git-commit with-editor emmet-mode coffee-mode key-chord ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
+    (company-statistics osx-dictionary flycheck-flow company-flow pug-mode eshell-z yapfify xterm-color shell-pop org-projectile htmlize helm-bibtex git-link dumb-jump company csv-mode clojure-snippets clj-refactor inflections edn paredit peg cider-eval-sexp-fu cider queue clojure-mode ivy org-ref live-py-mode elm-mode skewer-mode web-mode web-beautify tern tagedit smeargle slim-mode scss-mode sass-mode orgit mmm-mode markdown-toc markdown-mode magit-gitflow less-css-mode json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc jade-mode helm-gitignore request helm-css-scss haml-mode gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger gh-md evil-magit magit magit-popup git-commit with-editor emmet-mode coffee-mode key-chord ws-butler window-numbering volatile-highlights vi-tilde-fringe spaceline s powerline smooth-scrolling restart-emacs rainbow-delimiters popwin persp-mode pcre2el paradox hydra spinner page-break-lines open-junk-file neotree move-text macrostep lorem-ipsum linum-relative leuven-theme info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-args evil-anzu anzu eval-sexp-fu highlight elisp-slime-nav define-word clean-aindent-mode buffer-move bracketed-paste auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async quelpa package-build use-package which-key bind-key bind-map evil spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

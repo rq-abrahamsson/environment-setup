@@ -3,6 +3,8 @@
 #Install hombrew
 #/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 #brew update
+sudo chown -R $USER /usr/local/*
+
 
 #brew install git
 #brew install hub
