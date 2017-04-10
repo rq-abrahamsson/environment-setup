@@ -55,7 +55,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git colored-man colorize virtualenv pip python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search jsontools)
 
 export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export EDITOR='emacs'
+export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
+# export EDITOR='emacs'
 
 # FileSearch
 function f() { find . -iname "*$1*" ${@:2} }
@@ -98,6 +99,13 @@ source $ZSH/oh-my-zsh.sh
 #bindkey -M emacs '^P' history-substring-search-up
 #bindkey -M emacs '^N' history-substring-search-down
 
+#Add missing color
+export TERM=xterm-256color
+
+#Set locale
+#export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+
 
 # Add latex to path
 export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin
@@ -107,7 +115,7 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 
 # Rearrange so brew path is ok
-PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 #Script to check for git versions
 function check {
@@ -141,7 +149,24 @@ function check {
 
 }
 
-export export PATH="$PATH:`/usr/local/bin/yarn`"
+#Configure yarn and npm paths
+export PATH="$PATH:`/usr/local/bin/yarn`"
+alias npm-exec='PATH=$(npm bin):$PATH'
+export PATH=./node_modules/.bin:$PATH
 
 export NVM_DIR="/Users/robin.abrahamsson/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="$HOME/.elmenv/bin:$PATH"
+eval "$(elmenv init -)"
+
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+
+#Configure Leiningen for Clojure
+export PATH=~/bin:$PATH
+#Configure Rust
+source $HOME/.cargo/env
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
+[[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"
+
