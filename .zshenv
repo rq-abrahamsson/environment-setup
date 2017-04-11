@@ -2,11 +2,20 @@
 # All exports
 # ###########
 
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="pygamalion"
+ZSH_THEME="robbyrussell"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/robin.abrahamsson/.oh-my-zsh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
