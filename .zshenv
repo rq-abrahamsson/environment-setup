@@ -52,3 +52,6 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #Configure Leiningen for Clojure
 export PATH=~/bin:$PATH
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
+[[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"

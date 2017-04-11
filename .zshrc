@@ -107,6 +107,3 @@ function check {
 #Configure Rust
 source $HOME/.cargo/env
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
-[[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"
