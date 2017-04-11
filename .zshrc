@@ -1,9 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/robin.abrahamsson/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -54,10 +48,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git colored-man colorize virtualenv pip python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search jsontools)
 
-export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
-# export EDITOR='emacs'
-
 # FileSearch
 function f() { find . -iname "*$1*" ${@:2} }
 function r() { grep "$1" ${@:2} -R . }
@@ -71,24 +61,6 @@ alias roulette='if [[ $[ $RANDOM % 6 ] == 0 ]]; then echo "boom"; else echo "cli
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -96,26 +68,10 @@ source $ZSH/oh-my-zsh.sh
 #
 
 # Set emacs keybindings for history substring not working
+# Would be really nice if this worked
 #bindkey -M emacs '^P' history-substring-search-up
 #bindkey -M emacs '^N' history-substring-search-down
 
-#Add missing color
-export TERM=xterm-256color
-
-#Set locale
-#export LANG=en_US.UTF-8
-#export LC_ALL=en_US.UTF-8
-
-
-# Add latex to path
-export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin
-
-# Add android stuff to path
-export ANDROID_HOME=/usr/local/opt/android-sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-
-# Rearrange so brew path is ok
-export PATH=/usr/local/bin:$PATH
 
 #Script to check for git versions
 function check {
@@ -146,27 +102,11 @@ function check {
             done
         done
     fi
-
 }
 
-#Configure yarn and npm paths
-export PATH="$PATH:`/usr/local/bin/yarn`"
-alias npm-exec='PATH=$(npm bin):$PATH'
-export PATH=./node_modules/.bin:$PATH
-
-export NVM_DIR="/Users/robin.abrahamsson/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export PATH="$HOME/.elmenv/bin:$PATH"
-eval "$(elmenv init -)"
-
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-
-#Configure Leiningen for Clojure
-export PATH=~/bin:$PATH
 #Configure Rust
 source $HOME/.cargo/env
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
 [[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"
-

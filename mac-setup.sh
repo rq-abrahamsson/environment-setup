@@ -45,6 +45,7 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 #chsh -s /usr/local/bin/zsh
 
 #ln -s .zshrc ~
+#cp .zshenv ~
 
 
 ####################
