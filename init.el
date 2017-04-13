@@ -90,7 +90,7 @@ values."
    dotspacemacs-additional-packages
    '(
      evil-escape
-     restclient)
+     )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
@@ -172,8 +172,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   ;;"Source Code Pro"
+   dotspacemacs-default-font '("Menlo"
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -380,6 +381,10 @@ you should place your code here."
 
   (setq-default TeX-master nil) ; Query for master file.
   (add-hook 'prog-mode-hook 'rainbow-mode)
+  (spacemacs/set-leader-keys (kbd "RET") 'evil-search-highlight-persist-remove-all)
+  ;; Projectile was slow and indexed files every time.
+  ;(setq projectile-enable-caching t)
+  (setq shell-file-name "/bin/sh")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
