@@ -393,9 +393,6 @@ you should place your code here."
   ;; Projectile was slow and indexed files every time.
   ;(setq projectile-enable-caching t)
   (setq shell-file-name "/bin/sh")
-
-  (push "~/org-html5presentation.el" load-path)
-  (require 'ox-html5presentation)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
