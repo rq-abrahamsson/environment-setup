@@ -1,3 +1,10 @@
+#############
+# Aliases
+#############
+
+alias cppcompile='c++ -std=c++11 -stdlib=libc++'
+alias roulette='if [[ $[ $RANDOM % 6 ] == 0 ]]; then echo "boom"; else echo "click"; fi'
+
 # ###########
 # All exports
 # ###########
@@ -10,6 +17,9 @@ ZSH_THEME="robbyrussell"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/robin.abrahamsson/.oh-my-zsh
+
+# Source zsh
+source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -60,6 +70,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 #Configure Leiningen for Clojure
 export PATH=~/bin:$PATH
+
+# #Configure Rust
+source $HOME/.cargo/env
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"

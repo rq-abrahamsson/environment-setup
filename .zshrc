@@ -48,17 +48,6 @@ function r() { grep "$1" ${@:2} -R . }
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
-# Aliases
-alias cppcompile='c++ -std=c++11 -stdlib=libc++'
-alias roulette='if [[ $[ $RANDOM % 6 ] == 0 ]]; then echo "boom"; else echo "click"; fi'
-
-source $ZSH/oh-my-zsh.sh
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
 
 # Set emacs keybindings for history substring not working
 # Would be really nice if this worked
@@ -96,7 +85,3 @@ function check {
         done
     fi
 }
-
-#Configure Rust
-source $HOME/.cargo/env
-

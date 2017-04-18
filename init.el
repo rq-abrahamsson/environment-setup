@@ -70,7 +70,8 @@ values."
      restclient
      (rust :variables
            rust-format-on-save t)
-     org
+     (org :variables
+          org-enable-reveal-js-support t)
      osx
      (python :variables
              python-enable-yapf-format-on-save t)
@@ -90,6 +91,13 @@ values."
    dotspacemacs-additional-packages
    '(
      evil-escape
+     htmlize
+     ;; (ox-html5presentation :location (recipe
+     ;;                                  :fetcher github
+     ;;                                  :repo "kinjo/org-html5presentation.el"))
+     ;; (ox-html5presentation :fetcher github
+     ;;                       :repo "kinjo/org-html5presentation.el")
+     ;; org-html5slide
      )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -385,6 +393,9 @@ you should place your code here."
   ;; Projectile was slow and indexed files every time.
   ;(setq projectile-enable-caching t)
   (setq shell-file-name "/bin/sh")
+
+  (push "~/org-html5presentation.el" load-path)
+  (require 'ox-html5presentation)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
