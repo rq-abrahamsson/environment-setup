@@ -57,6 +57,7 @@ values."
      git
      haskell
      html
+     javascript
      ;(keyboard-layout :variables
      ;                 kl-layout 'dvorak)
      (latex :variables
@@ -393,6 +394,7 @@ you should place your code here."
   ;; Projectile was slow and indexed files every time.
   ;(setq projectile-enable-caching t)
   (setq shell-file-name "/bin/sh")
+  (setq-default whitespace-cleanup t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
