@@ -81,6 +81,7 @@ values."
             shell-default-position 'bottom)
      (spell-checking :variables
                      syntax-checking-enable-tooltips nil)
+     sql
      syntax-checking
      version-control
      yaml
@@ -309,7 +310,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers nil
+   dotspacemacs-line-numbers t
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -367,6 +368,12 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (setq css-indent-offset n) ; css-mode
   )
 
+(defun move-text-bindings ()
+  (define-key evil-visual-state-map "\C-j" (concat ":m '>+1" (kbd "RET") "gv=gv"))
+  (define-key evil-visual-state-map "\C-k" (concat ":m '<-2" (kbd "RET") "gv=gv"))
+  (define-key evil-normal-state-map "\C-k" 'move-text-up)
+  (define-key evil-normal-state-map "\C-j" 'move-text-down))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
 This function is called at the very end of Spacemacs initialization after
@@ -395,6 +402,11 @@ you should place your code here."
   ;(setq projectile-enable-caching t)
   (setq shell-file-name "/bin/sh")
   (setq-default whitespace-cleanup t)
+  ;;Move selected rows
+  (move-text-bindings)
+  ;; Latex bin path
+  (setq exec-path (append exec-path '("/Library/TeX/texbin")))
+  (setq js2-strict-missing-semi-warning nil)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

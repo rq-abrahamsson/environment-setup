@@ -1,6 +1,5 @@
 
 #source ~/.zshenv
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -122,10 +121,10 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-
-export PATH="$HOME/.yarn/bin:$PATH"
-
+# NEED TO BE FIRST, does not add to path, sets PATH
 export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
 # export EDITOR='emacs'
 
@@ -143,11 +142,12 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 
 # Rearrange so brew path is ok
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/bin:$PATH"
 
 
 #Configure yarn and npm paths
-export PATH="$PATH:`/usr/local/bin/yarn`"
+export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$PATH:/usr/local/bin/yarn"
 alias npm-exec='PATH=$(npm bin):$PATH'
 export PATH=./node_modules/.bin:$PATH
 
