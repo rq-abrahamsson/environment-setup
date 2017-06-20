@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     nginx
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -94,6 +95,7 @@ values."
    '(
      evil-escape
      htmlize
+     groovy-mode
      ;; (ox-html5presentation :location (recipe
      ;;                                  :fetcher github
      ;;                                  :repo "kinjo/org-html5presentation.el"))
@@ -407,6 +409,9 @@ you should place your code here."
   ;; Latex bin path
   (setq exec-path (append exec-path '("/Library/TeX/texbin")))
   (setq js2-strict-missing-semi-warning nil)
+
+  (setenv "PATH" (concat (getenv "PATH") ":/Users/robin.abrahamsson/.nvm/versions/node/v7.9.0/bin"))
+  (setq exec-path (append exec-path '(":/Users/robin.abrahamsson/.nvm/versions/node/v7.9.0/bin")))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

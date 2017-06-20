@@ -96,6 +96,11 @@ function check {
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias roulette='if [[ $[ $RANDOM % 6 ] == 0 ]]; then echo "boom"; else echo "click"; fi'
 
+# Docker
+alias kill-docker='docker stop `docker ps -q`'
+# brew install docker-clean
+alias dockerc='docker-clean --all'
+
 # ###########
 # All exports
 # ###########
@@ -153,6 +158,7 @@ export PATH=./node_modules/.bin:$PATH
 
 export NVM_DIR="/Users/robin.abrahamsson/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 export PATH="$HOME/.elmenv/bin:$PATH"
 eval "$(elmenv init -)"
 
@@ -172,3 +178,4 @@ source $HOME/.cargo/env
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
 [[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
