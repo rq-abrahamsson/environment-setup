@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ansible
      nginx
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -96,12 +97,11 @@ values."
      evil-escape
      htmlize
      groovy-mode
-     ;; (ox-html5presentation :location (recipe
-     ;;                                  :fetcher github
-     ;;                                  :repo "kinjo/org-html5presentation.el"))
-     ;; (ox-html5presentation :fetcher github
-     ;;                       :repo "kinjo/org-html5presentation.el")
-     ;; org-html5slide
+     dockerfile-mode
+     (vue-mode :location (recipe
+                          :fetcher github
+                          :repo "codefalling/vue-mode"))
+
      )
 
    ;; A list of packages and/or extensions that will not be install and loaded.
@@ -410,8 +410,10 @@ you should place your code here."
   (setq exec-path (append exec-path '("/Library/TeX/texbin")))
   (setq js2-strict-missing-semi-warning nil)
 
-  (setenv "PATH" (concat (getenv "PATH") ":/Users/robin.abrahamsson/.nvm/versions/node/v7.9.0/bin"))
-  (setq exec-path (append exec-path '(":/Users/robin.abrahamsson/.nvm/versions/node/v7.9.0/bin")))
+  (setenv "PATH" (concat (getenv "PATH") ":/Users/robin.abrahamsson/.nvm/versions/node/v8.2.1/bin"))
+  (setq exec-path (append exec-path '(":/Users/robin.abrahamsson/.nvm/versions/node/v8.2.1/bin")))
+  (defun dotspacemacs/init-vue-mode ()
+    (use-package vue-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

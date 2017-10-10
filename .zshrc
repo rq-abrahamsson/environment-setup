@@ -101,6 +101,11 @@ alias kill-docker='docker stop `docker ps -q`'
 # brew install docker-clean
 alias dockerc='docker-clean --all'
 
+# Project search
+alias pgrep='grep -R -i --color --exclude-dir={node_modules,bower_components,./public,lib,.git,build,docs} --exclude={yarn.lock,.gitignore} '
+
+alias response-headers='curl -s -D - -o /dev/null'
+
 # ###########
 # All exports
 # ###########
@@ -162,6 +167,7 @@ export NVM_DIR="/Users/robin.abrahamsson/.nvm"
 export PATH="$HOME/.elmenv/bin:$PATH"
 eval "$(elmenv init -)"
 
+source ~/.profile #Loading profile beacuse rvm is loaded there
 
 #Set locale
 #export LANG=en_US.UTF-8
@@ -179,3 +185,6 @@ source $HOME/.cargo/env
 export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
 [[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
