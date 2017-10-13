@@ -105,6 +105,7 @@ alias dockerc='docker-clean --all'
 alias pgrep='grep -R -i --color --exclude-dir={node_modules,bower_components,./public,lib,.git,build,docs} --exclude={yarn.lock,.gitignore} '
 
 alias response-headers='curl -s -D - -o /dev/null'
+alias headers-http2='curl --http2 -s -D - -o /dev/null'
 
 # ###########
 # All exports

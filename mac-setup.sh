@@ -9,6 +9,8 @@ sudo chown -R $USER /usr/local/*
 #brew install git
 #brew install hub
 #brew intsall aspell
+# brew install curl --with-nghttp2
+# brew link curl --force
 #brew cask install google-chrome
 #brew cask install telegram
 
