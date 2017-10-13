@@ -117,6 +117,9 @@ alias headers-http2='curl --http2 -s -D - -o /dev/null'
 #ZSH_THEME="pygamalion"
 ZSH_THEME="robbyrussell"
 
+# Curl with http2
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/robin.abrahamsson/.oh-my-zsh
 
