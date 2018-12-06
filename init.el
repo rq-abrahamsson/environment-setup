@@ -410,8 +410,8 @@ you should place your code here."
   (setq exec-path (append exec-path '("/Library/TeX/texbin")))
   (setq js2-strict-missing-semi-warning nil)
 
-  (setenv "PATH" (concat (getenv "PATH") ":/Users/robin.abrahamsson/.nvm/versions/node/v8.2.1/bin"))
-  (setq exec-path (append exec-path '(":/Users/robin.abrahamsson/.nvm/versions/node/v8.2.1/bin")))
+  (setenv "PATH" (concat (getenv "PATH") ":/Users/robin.abrahamsson/.nvm/versions/node/v8.9.1/bin"))
+  (setq exec-path (append exec-path '(":/Users/robin.abrahamsson/.nvm/versions/node/v8.9.1/bin")))
   (defun dotspacemacs/init-vue-mode ()
     (use-package vue-mode))
   )

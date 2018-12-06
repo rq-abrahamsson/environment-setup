@@ -49,6 +49,9 @@ function r() { grep "$1" ${@:2} -R . }
 #mkdir and cd
 function mkcd() { mkdir -p "$@" && cd "$_"; }
 
+# kill process on port
+function portkill() { kill -9 $(lsof -t -i:$1) }
+
 
 # Set emacs keybindings for history substring not working
 # Would be really nice if this worked
@@ -87,6 +90,13 @@ function check {
     fi
 }
 
+# Cheat sheet command
+how_in()
+{
+  where="$1"; shift
+  IFS=+ curl "https://cht.sh/$where/$*"
+}
+
 
 
 #############
@@ -95,6 +105,10 @@ function check {
 
 alias cppcompile='c++ -std=c++11 -stdlib=libc++'
 alias roulette='if [[ $[ $RANDOM % 6 ] == 0 ]]; then echo "boom"; else echo "click"; fi'
+function matrix() {
+    echo -e "\e[1;40m" ; clear ; while :; do echo $LINES $COLUMNS $(( $RANDOM % $COLUMNS)) $(( $RANDOM % 72 )) ;sleep 0.05; done|awk '{ letters="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()"; c=$4; letter=substr(letters,c,1);a[$3]=0;for (x in a) {o=a[x];a[x]=a[x]+1; printf "\033[%s;%sH\033[2;32m%s",o,x,letter; printf "\033[%s;%sH\033[1;37m%s\033[0;0H",a[x],x,letter;if (a[x] >= $1) { a[x]=0; } }}'
+}
+alias weather='curl "https://wttr.in/${1:-stockholm}"'
 
 # Docker
 alias kill-docker='docker stop `docker ps -q`'
@@ -111,14 +125,14 @@ alias headers-http2='curl --http2 -s -D - -o /dev/null'
 # All exports
 # ###########
 
+# Mono path
+export PATH=$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin/
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygamalion"
 ZSH_THEME="robbyrussell"
-
-# Curl with http2
-export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/robin.abrahamsson/.oh-my-zsh
@@ -135,12 +149,18 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# NEED TO BE FIRST, does not add to path, sets PATH
-export PATH="/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# NEED TO BE FIRST, does not add to path, sets PATH, (not anymore...)
+export PATH="$PATH:/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
-export ALTERNATE_EDITOR=emacs EDITOR=emacsclient VISUAL=emacsclient
+export ALTERNATE_EDITOR=emacs EDITOR=vim VISUAL=vim
 # export EDITOR='emacs'
+
+# Curl with http2
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+# VS code path
+# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 # Add latex to path
 export PATH=${PATH}:/usr/local/texlive/2016/bin/x86_64-darwin
@@ -170,6 +190,7 @@ export NVM_DIR="/Users/robin.abrahamsson/.nvm"
 
 export PATH="$HOME/.elmenv/bin:$PATH"
 eval "$(elmenv init -)"
+eval "$(pyenv init -)"
 
 source ~/.profile #Loading profile beacuse rvm is loaded there
 
@@ -192,3 +213,6 @@ export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
