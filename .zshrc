@@ -216,3 +216,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Neovim
+alias vim="nvim"
+alias vimdiff="nvim -d"

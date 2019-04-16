@@ -9,6 +9,7 @@ sudo chown -R $USER /usr/local/*
 #brew install git
 #brew install hub
 #brew intsall aspell
+#brew install neovim
 # brew install curl --with-nghttp2
 # brew install pyenv
 # brew link curl --force
