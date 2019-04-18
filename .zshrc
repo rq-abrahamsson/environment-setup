@@ -1,4 +1,3 @@
-
 #source ~/.zshenv
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -133,13 +132,11 @@ export PATH=$PATH:/Library/Frameworks/Mono.framework/Versions/Current/bin/
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="pygamalion"
 ZSH_THEME="robbyrussell"
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/robin.abrahamsson/.oh-my-zsh
 
 # Source zsh
 source $ZSH/oh-my-zsh.sh
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -178,7 +175,6 @@ export PATH=${PATH}:${ANDROID_HOME}/tools
 # Rearrange so brew path is ok
 export PATH="/usr/local/bin:$PATH"
 
-
 #Configure yarn and npm paths
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$PATH:/usr/local/bin/yarn"
@@ -206,9 +202,6 @@ export PATH=~/bin:$PATH
 # #Configure Rust
 source $HOME/.cargo/env
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/robin.abrahamsson/.sdkman"
-[[ -s "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/robin.abrahamsson/.sdkman/bin/sdkman-init.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
