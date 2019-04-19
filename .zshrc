@@ -150,7 +150,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH="$PATH:/usr/local/share/python:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 export PATH="$HOME/Library/Python/2.7/bin:$PATH"
-export ALTERNATE_EDITOR=emacs EDITOR=vim VISUAL=vim
+export ALTERNATE_EDITOR=vim EDITOR=nvim VISUAL=nvim
 # export EDITOR='emacs'
 
 # Curl with http2
