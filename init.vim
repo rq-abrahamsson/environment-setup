@@ -1,12 +1,40 @@
 "
 " Vim config
-" Base created with https://www.lucasfcosta.com/2019/02/10/terminal-guide-2019.html
 "
+
 let g:python_host_prog = '/Users/robin.abrahamsson/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/Users/robin.abrahamsson/.pyenv/versions/neovim3/bin/python'
 
-imap jk <Esc>
+" Remap keys {{{
+let mapleader="," " leader is comma
+" jk is escape
+inoremap jk <Esc>
 nnoremap <C-P> :Files<CR>
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+" move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+" $/^ doesn't do anything
+nnoremap $ <nop>
+nnoremap ^ <nop>
+" open ag.vim
+nnoremap <leader>a :Ag
+" }}}
+
+
+syntax enable " enable syntax processing
+" tabs {{{
+set tabstop=4 " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in tab when editing
+set expandtab " tabs are spaces
+" }}}
+set number " show line number on current row
+set relativenumber " show relative line numbers
+set showmatch " highlight matching [{()}]
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
+
 
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'neomake/neomake'
@@ -14,6 +42,11 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'w0rp/ale'
 
+" Colorscheme {{{
+Plug 'tomasr/molokai'
+Plug 'sjl/badwolf'
+" }}}
+"
 " JavaScript
 Plug 'ternjs/tern_for_vim'
 
@@ -30,6 +63,7 @@ Plug 'mattn/emmet-vim'
 
 call plug#end()
 
+colorscheme badwolf
 
 " NERDTree on ctrl+n
 let NERDTreeShowHidden=1
