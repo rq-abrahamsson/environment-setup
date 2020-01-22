@@ -9,12 +9,12 @@ sudo chown -R $USER /usr/local/*
 #brew install git
 #brew install hub
 #brew intsall aspell
-#brew install neovim
-# brew install curl --with-nghttp2
+brew install neovim
+ brew install curl --with-nghttp2
 # brew install pyenv
-# brew link curl --force
+ brew link curl --force
 #brew cask install google-chrome
-#brew cask install telegram
+brew cask install telegram
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -37,19 +37,22 @@ defaults write com.apple.menuextra.battery ShowPercent -string "NO"
 # set tap-to-click
 defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 
+# Faster key repeat
+defaults write NSGlobalDomain KeyRepeat -int 1
+
 ###################
 ### setup ZSH and oh-my-zsh
 ###################
 
-#brew install zsh zsh-completions
+brew install zsh zsh-completions
 
-#curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
-#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | sh
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 #Change shell and you should log in and out after this...
-#chsh -s /usr/local/bin/zsh
+chsh -s /usr/local/bin/zsh
 
-#ln -s .zshrc ~
-#cp .zshenv ~
+ln -s .zshrc ~
+cp .zshenv ~
 
 
 ####################
@@ -87,18 +90,18 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -int 1
 ### setup iTerm2
 ###################
 #Install iterm2 according to instructions on its homepage....
-#brew cask install iterm2
-#rm ~/Library/Caches/com.googlecode.iterm2.plist
-#cp com.googlecode.iterm12.plist ~/Library/Preferences/
-#defaults read com.googlecode.iterm2
-#brew cask install spectacle
+brew cask install iterm2
+rm ~/Library/Caches/com.googlecode.iterm2.plist
+cp com.googlecode.iterm12.plist ~/Library/Preferences/
+defaults read com.googlecode.iterm2
+brew cask install spectacle
 
 ##################
 ### setup Android
 ##################
 
-brew install node
-brew install watchman
-npm install -g react-native-cli
-brew cask install java
-brew install android-sdk
+#brew install node
+#brew install watchman
+#npm install -g react-native-cli
+#brew cask install java
+#brew install android-sdk
