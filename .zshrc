@@ -220,3 +220,9 @@ alias vimdiff="nvim -d"
 
 #Pyenv
 pyenv shell 3.7.3 2.7.16
+
+. /usr/local/opt/asdf/asdf.sh
+
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
