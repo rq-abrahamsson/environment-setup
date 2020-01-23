@@ -39,7 +39,8 @@
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man colorize virtualenv pip python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search jsontools)
+# plugins=(git colored-man colorize virtualenv pip python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search jsontools)
+plugins=(git colored-man colorize virtualenv python brew osx zsh-syntax-highlighting common-aliases zsh-history-substring-search jsontools)
 
 # FileSearch
 function f() { find . -iname "*$1*" ${@:2} }
@@ -204,6 +205,9 @@ source $HOME/.cargo/env
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# Add Prolog
+export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/curl/bin:$PATH"
@@ -213,3 +217,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Neovim
 alias vim="nvim"
 alias vimdiff="nvim -d"
+
+#Pyenv
+pyenv shell 3.7.3 2.7.16

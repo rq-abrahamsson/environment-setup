@@ -4,6 +4,7 @@
 
 let g:python_host_prog = '/Users/robin.abrahamsson/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/Users/robin.abrahamsson/.pyenv/versions/neovim3/bin/python'
+set encoding=utf-8
 
 " Remap keys {{{
 let mapleader="," " leader is comma
@@ -46,12 +47,20 @@ Plug 'w0rp/ale'
 Plug 'tomasr/molokai'
 Plug 'sjl/badwolf'
 " }}}
-"
+
 " JavaScript
 Plug 'ternjs/tern_for_vim'
 
+" Elixir
+Plug 'elixir-editors/vim-elixir'
+Plug 'thinca/vim-ref'
+Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+
+" Elm
+Plug 'elmcast/elm-vim'
+
 " semantic-based completion
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'pangloss/vim-javascript'
 
 " Fuzzy search file
@@ -66,10 +75,10 @@ call plug#end()
 colorscheme badwolf
 
 " NERDTree on ctrl+n
-let NERDTreeShowHidden=1
-map <silent> <C-n> :NERDTreeToggle<CR>
+"let NERDTreeShowHidden=1
+"map <silent> <C-n> :NERDTreeToggle<CR>
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
+"let g:NERDTreeQuitOnOpen=1
 
 
 " make FZF respect gitignore if `ag` is installed
@@ -101,9 +110,12 @@ let g:ale_fixers = {
 
 " disable auto_triggering ycm suggestions pane and instead
 " use semantic completion only on Ctrl+n
-let ycm_trigger_key = '<C-n>'
-let g:ycm_auto_trigger = 0
-let g:ycm_key_invoke_completion = ycm_trigger_key
+"let ycm_trigger_key = '<C-n>'
+"let g:ycm_auto_trigger = 0
+"let g:ycm_key_invoke_completion = ycm_trigger_key
+"let g:ycm_semantic_triggers = {
+"     \ 'elm' : ['.'],
+"     \}
 
 " this is some arcane magic to allow cycling through the YCM options
 " with the same key that opened it.

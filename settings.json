@@ -1,0 +1,125 @@
+{
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "extensions.ignoreRecommendations": false,
+  "workbench.activityBar.visible": true,
+  "workbench.statusBar.visible": true,
+  "window.zoomLevel": 0,
+  "files.autoSave": "off",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.lineNumbers": "relative",
+  "vetur.format.defaultFormatter.js": "prettier-eslint",
+  // "[elm]": {
+  //   "editor.formatOnSave": true
+  // },
+  "elm.compiler": "./node_modules/.bin/elm",
+  "elm.makeCommand": "./node_modules/.bin/elm-make",
+  "elm.formatCommand": "./node_modules/.bin/elm-format",
+  "html.format.endWithNewline": true,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  // "eslint.enable": true,
+  "javascript.preferences.quoteStyle": "single",
+  "prettier.eslintIntegration": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+  "gitlens.keymap": "chorded",
+  "gitlens.advanced.messages": {
+    "suppressShowKeyBindingsNotice": true
+  },
+  "files.associations": {
+    "*.hbs": "handlebars"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    }
+  ],
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "suggest.autoImports": false
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 3000,
+  "[fsharp]": {
+    // "editor.defaultFormatter": "paolodellepiane.fantomas-fmt",
+    "editor.formatOnSave": false
+  },
+  "[elixir]": {
+    "editor.defaultFormatter": "JakeBecker.elixir-ls"
+  }
+  // "[c-sharp]": {
+  //   "editor.tabSize": 4
+  // }
+}
