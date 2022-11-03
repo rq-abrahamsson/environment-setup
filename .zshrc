@@ -52,6 +52,8 @@ function mkcd() { mkdir -p "$@" && cd "$_"; }
 # kill process on port
 function portkill() { kill -9 $(lsof -t -i:$1) }
 
+# Ingore commands with inital space
+setopt HIST_IGNORE_SPACE
 
 # Set emacs keybindings for history substring not working
 # Would be really nice if this worked
@@ -120,6 +122,8 @@ alias pgrep='grep -R -i --color --exclude-dir={node_modules,bower_components,./p
 
 alias response-headers='curl -s -D - -o /dev/null'
 alias headers-http2='curl --http2 -s -D - -o /dev/null'
+
+alias gloo='git log --graph --pretty='\''%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cs) %C(bold blue)<%an>%Creset'\'
 
 # ###########
 # All exports
@@ -208,6 +212,9 @@ source $HOME/.cargo/env
 # Add Prolog
 export PATH="/Applications/SWI-Prolog.app/Contents/MacOS:$PATH"
 
+## RUBY
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/curl/bin:$PATH"
@@ -221,8 +228,18 @@ alias vimdiff="nvim -d"
 #Pyenv
 pyenv shell 3.7.3 2.7.16
 
-. /usr/local/opt/asdf/asdf.sh
+# asdf
+# . $HOME/.asdf/asdf.sh
+# . /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
+export PATH=/Applications/MiniZincIDE.app/Contents/Resources:$PATH
+
+
